@@ -17,7 +17,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDesktop = new javax.swing.JDesktopPane();
         jmbBarraMenu = new javax.swing.JMenuBar();
         jmLogoCurso = new javax.swing.JMenu();
         jmCadastros = new javax.swing.JMenu();
@@ -32,14 +32,14 @@ public class Principal extends javax.swing.JFrame {
         setTitle("CURCAT - Catálogo de Cursos");
         setResizable(false);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopLayout = new javax.swing.GroupLayout(jDesktop);
+        jDesktop.setLayout(jDesktopLayout);
+        jDesktopLayout.setHorizontalGroup(
+            jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 858, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDesktopLayout.setVerticalGroup(
+            jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 561, Short.MAX_VALUE)
         );
 
@@ -72,6 +72,11 @@ public class Principal extends javax.swing.JFrame {
         jmiCursosLista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCursosLista.setIcon(new javax.swing.ImageIcon("C:\\Users\\rezen\\Downloads\\img lp3\\cursos cada.png")); // NOI18N
         jmiCursosLista.setText("Lista de Cursos ");
+        jmiCursosLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCursosListaActionPerformed(evt);
+            }
+        });
         jmLogoCurso.add(jmiCursosLista);
 
         jmbBarraMenu.add(jmLogoCurso);
@@ -87,16 +92,22 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktop)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktop)
         );
 
         setSize(new java.awt.Dimension(874, 608));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmiCursosListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCursosListaActionPerformed
+        FormPadrao tela = new FormPadrao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiCursosListaActionPerformed
 
     
     public static void main(String args[]) {
@@ -109,7 +120,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu jmCadastros;
     private javax.swing.JMenu jmLogoCurso;
