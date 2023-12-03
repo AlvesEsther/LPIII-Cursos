@@ -1,14 +1,29 @@
 
 package visao;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 
 public class FormPadrao extends javax.swing.JInternalFrame {
+    JLabel jlConsulta;
+    JTextField jtfConsulta;
 
     
     public FormPadrao() {
         initComponents();
         habilitaBotoes(true);
         habilitaCampos(false);
+        
+        // JLabel - Consulta
+        jlConsulta = new JLabel("Consulta:");
+        jlConsulta.setBounds(15, 5, 60, 25);
+        jpnConsulta.add(jlConsulta);
+        
+        // JTextField - Consulta
+        jtfConsulta = new JTextField();
+        jtfConsulta.setBounds(80,5,600,25);
+        jpnConsulta.add(jtfConsulta);
     }
 
     
@@ -120,6 +135,11 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         jlDataFim.setText("Data Fim:");
 
         jftxDataFim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jftxDataFim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jftxDataFimActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpnFormularioLayout = new javax.swing.GroupLayout(jpnFormulario);
         jpnFormulario.setLayout(jpnFormularioLayout);
@@ -138,13 +158,13 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                         .addComponent(jftxDataIni, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jlDataFim)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jftxDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpnFormularioLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jtfInstrutor, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jpnFormularioLayout.setVerticalGroup(
             jpnFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,11 +226,13 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         habilitaBotoes(false);
         habilitaCampos(true);
         limpaCampo();
+        jtfNome.requestFocus();
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         habilitaBotoes(false);
         habilitaCampos(true);
+        jtfNome.requestFocus();
     }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
@@ -222,6 +244,10 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         habilitaBotoes(true);
         habilitaCampos(false);
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void jftxDataFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jftxDataFimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jftxDataFimActionPerformed
     // Método pra habilitar e desabilitar botoes no formulario
     public void habilitaBotoes(boolean estado){
         jbNovo.setEnabled(estado);
