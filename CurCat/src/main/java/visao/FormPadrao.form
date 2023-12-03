@@ -160,7 +160,7 @@
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jlDataIni" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jftfDataIni" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="jftxDataIni" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jlDataFim" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -184,7 +184,7 @@
                       <Component id="jlNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jtfNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jlDataIni" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jftfDataIni" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jftxDataIni" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jlDataFim" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jftxDataFim" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -218,7 +218,7 @@
             <Property name="text" type="java.lang.String" value="Data In&#xed;cio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jftfDataIni">
+        <Component class="javax.swing.JFormattedTextField" name="jftxDataIni">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format subtype="1" type="1"/>
