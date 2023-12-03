@@ -104,7 +104,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCursosListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCursosListaActionPerformed
-        FormPadrao tela = new FormPadrao();
+        CursoVisao tela = new CursoVisao();
         jDesktop.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jmiCursosListaActionPerformed
