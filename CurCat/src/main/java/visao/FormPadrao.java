@@ -7,6 +7,8 @@ public class FormPadrao extends javax.swing.JInternalFrame {
     
     public FormPadrao() {
         initComponents();
+        habilitaBotoes(true);
+        habilitaCampos(false);
     }
 
     
@@ -27,7 +29,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jtfInstrutor = new javax.swing.JTextField();
         jlDataIni = new javax.swing.JLabel();
-        jftfDataIni = new javax.swing.JFormattedTextField();
+        jftxDataIni = new javax.swing.JFormattedTextField();
         jlDataFim = new javax.swing.JLabel();
         jftxDataFim = new javax.swing.JFormattedTextField();
         jpnConsulta = new javax.swing.JPanel();
@@ -113,7 +115,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
 
         jlDataIni.setText("Data Início:");
 
-        jftfDataIni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jftxDataIni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
         jlDataFim.setText("Data Fim:");
 
@@ -133,7 +135,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                         .addGap(25, 25, 25)
                         .addComponent(jlDataIni)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jftfDataIni, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jftxDataIni, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jlDataFim)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -152,7 +154,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                     .addComponent(jlNome)
                     .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlDataIni)
-                    .addComponent(jftfDataIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxDataIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlDataFim)
                     .addComponent(jftxDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -202,18 +204,23 @@ public class FormPadrao extends javax.swing.JInternalFrame {
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
         habilitaBotoes(false);
+        habilitaCampos(true);
+        limpaCampo();
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         habilitaBotoes(false);
+        habilitaCampos(true);
     }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         habilitaBotoes(true);
+        habilitaCampos(false);
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         habilitaBotoes(true);
+        habilitaCampos(false);
     }//GEN-LAST:event_jbCancelarActionPerformed
     // Método pra habilitar e desabilitar botoes no formulario
     public void habilitaBotoes(boolean estado){
@@ -224,7 +231,21 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         jbSalvar.setEnabled(!estado);
         jbCancelar.setEnabled(!estado);
     }
-
+    
+   // Método para habilitar ou desabilitar acesso os campos de edição
+    public void habilitaCampos(boolean estado){
+        jtfNome.setEnabled(estado);
+        jtfInstrutor.setEnabled(estado);
+        jftxDataIni.setEnabled(estado);
+        jftxDataFim.setEnabled(estado);
+    }
+    // Método para limpar os campos do formulário
+    public void limpaCampo(){
+        jtfNome.setText("");
+        jtfInstrutor.setText("");
+        jftxDataIni.setText("");
+        jftxDataFim.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbAlterar;
@@ -233,8 +254,8 @@ public class FormPadrao extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbFechar;
     private javax.swing.JButton jbNovo;
     private javax.swing.JButton jbSalvar;
-    private javax.swing.JFormattedTextField jftfDataIni;
     private javax.swing.JFormattedTextField jftxDataFim;
+    private javax.swing.JFormattedTextField jftxDataIni;
     private javax.swing.JLabel jlDataFim;
     private javax.swing.JLabel jlDataIni;
     private javax.swing.JLabel jlNome;
