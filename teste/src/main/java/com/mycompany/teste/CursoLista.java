@@ -26,12 +26,19 @@ public class CursoLista extends javax.swing.JFrame {
             }
         });
         jBtnPesquisar.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        consultarCurso();
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              consultarCurso();
+             }
+        });
+        jBtnCancelar.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            cancelar();
+        }
+    });
     }
-});
-    }
+    
    private void salvarCurso() {
     try {
         String nomeCurso = jTFNomedoCurso.getText().trim();
@@ -61,6 +68,15 @@ public class CursoLista extends javax.swing.JFrame {
     } catch (Exception ex) {
         JOptionPane.showMessageDialog(this, "Erro ao salvar curso: " + ex.getMessage());
     }
+}
+     private void cancelar() {
+     // Limpar os campos ao cancelar
+      jTFNomedoCurso.setText("");
+      jTFInstrutor.setText("");
+      jFTFDataIni.setValue(null);
+      jFTFDataFim.setValue(null);
+
+      JOptionPane.showMessageDialog(this, "Operação cancelada.");
 }
 
 
