@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
-public class FormPadrao extends javax.swing.JInternalFrame {
+abstract public class FormPadrao extends javax.swing.JInternalFrame {
     JLabel jlConsulta;
     JTextField jtfConsulta;
 
